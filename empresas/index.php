@@ -1,5 +1,6 @@
 <?php
 require '../conexion/conexion.php';
+require '../conexion/sesion.php';
 
 $where = "";
 
@@ -18,17 +19,18 @@ $resultado = $mysqli->query($sql);
 
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="../css/bootstrap.min.css" rel="stylesheet">
-	<link href="../css/bootstrap-theme.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="../components/js/header.js"></script>
+  <script src="../components/js/footer.js"></script>
+  <title>Empresas</title>
 </head>
 
 <body>
 
 	<!-- MENU SUPERIOR -->
 	<header-component></header-component>
-	
+
 	<!-- MAIN -->
 	<div class="container">
 		<div class="row1">
@@ -105,7 +107,7 @@ $resultado = $mysqli->query($sql);
 	</div>
 
 	<!-- <button id="myBtn"><a href="#top" style="color: white; text-decoration: none";><i class="fas fa-chevron-up"></i></a></button> -->
-	<div id="myBtn"><a href="#top" ;><i class="fas fa-chevron-up"></i></a></div> 
+	<div id="myBtn"><a href="#top" ;><i class="fas fa-chevron-up"></i></a></div>
 
 		<!-- FOOTER -->
 		<footer-component></footer-component>
