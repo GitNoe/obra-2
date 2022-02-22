@@ -42,26 +42,27 @@ Hacer .gitignore con todo menos nuestras carpetas originales.
 La organización se hace por carpetas para evitar confusiones o duplicación de código:
 
 - index.php -> pantalla principal a la que se accede tras logearse -> SIN ESTILOS, SOLO LINKS DE PRUEBA
-- conexion (conexion.php + sesion.php) -> HECHO
-- login (login.php + logout.php) -> HECHO (CAMBIADO PARA QUE TODO SEA MYSQLI)
+- conexion (conexion.php + sesion.php) -> HECHO (dos conexiones, una para login y otra para funciones)
+- login (login.php + logout.php) -> HECHO Y 1 DISEÑO LISTO
 - citas, persoas, empresas (aún no completas)
+- components (header y footer js) -> HECHOS
+- scss (login)
 
 Carpetas de dependencias: assets, node_modules, scss.
 Archivos sueltos de dependencias.
+
+LOGIN: diseño 1 hecho
+PERSOAS: completo (faltaría enlazar formularios -excepto datos- a tablas de la base) sin estilos
 
 ## Extensión de la base de datos y Modificación de Código
 
 Registros (persoas y empresas): Sarai
 
-Formación (persoas): Ángela y Fernando
+Formación y Acciones (persoas): Ángela y Fernando
 
-Experiencia (persoas): Xabi
+Experiencia y Ofertas (persoas): Xabi
 
-Acciones (persoas): Noe
-
-Ofertas:
-
-Método (JS) para tener varias pestañas en una misma página: Noe, ver en nuevo.php de persoas o empresas
+Método (JS) para tener varias pestañas en una misma página: Noe (ver en nuevo.php de persoas o empresas)
 
 - Implementación de formularios en la estructura de pestañas
 - Sin header, footer ni estilos que no sean de bootstrap (de momento cdn)
