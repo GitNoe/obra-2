@@ -28,25 +28,23 @@ $resultado = $mysqli->query($sql);
 
 <body>
 
-	<!-- MENU SUPERIOR -->
+	<!-- header -->
 	<header-component></header-component>
 
 	<!-- MAIN -->
 	<div class="container">
-		<div class="row1">
 			<h2 style="text-align:center">Empresas</h2>
-		</div>
 
-		<div class="row2">
-			<a href="/empresas/functions/nuevo.php" class="btn btn-primary">Nova Empresa</a>
+		<div class="row">
+			<a href="functions/nuevo.php" class="btn btn-primary mb-4">Nova Empresa</a>
+    </div>
 
-			<div class="busca-persoas">
+			<div class="row">
 				<form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
 					<b>Nome: </b><input type="text" id="campo" name="campo" />
 					<input type="submit" id="enviar" name="enviar" value="Buscar" class="btn btn-info" />
 				</form>
 			</div>
-		</div>
 
 		<br>
 
@@ -84,42 +82,8 @@ $resultado = $mysqli->query($sql);
 		</div>
 	</div>
 
-	<!-- Modal -->
-	<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title" id="myModalLabel">Eliminar Rexistro</h4>
-				</div>
-
-				<div class="modal-body">
-					¿Desea eliminar este registro?
-				</div>
-
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-					<a class="btn btn-danger btn-ok">Delete</a>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- <button id="myBtn"><a href="#top" style="color: white; text-decoration: none";><i class="fas fa-chevron-up"></i></a></button> -->
-	<div id="myBtn"><a href="#top" ;><i class="fas fa-chevron-up"></i></a></div>
-
-		<!-- FOOTER -->
-		<footer-component></footer-component>
-		<!-- FOOTER -->
-	<script>
-		$('#confirm-delete').on('show.bs.modal', function(e) {
-			$(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
-
-			$('.debug-url').html('Delete URL: <strong>' + $(this).find('.btn-ok').attr('href') + '</strong>');
-		});
-	</script>
-
+  <!-- footer -->
+  <!-- <footer-component></footer-component> -->
 </body>
 
 </html>

@@ -15,24 +15,35 @@ require 'conexion/sesion.php';
   <title>OBRA 2 SOL</title>
   <!-- CND de bootstrap -> cambiar cuando toque -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="../components/js/header.js"></script>
+  <script src="../components/js/footer.js"></script>
 </head>
 
-<body style="margin-left: 10%;">
-  <h1 style="color: red">Welcome to SOL</h1>
-  <br><br>
+<body>
 
-  <a href="persoas/index.php">Index Persoas</a><br>
-  <a href="persoas/functions/nuevo.php">Novo Rexistro Persoas</a>
+  <!-- header -->
+  <header-component></header-component>
 
-  <br><br>
+  <main style="margin-left: 10%;">
+    <h1 style="color: red">Welcome to SOL</h1>
+    <br><br>
 
-  <a href="empresas/index.php">Index Empresas</a><br>
-  <a href="empresas/functions/nuevo.php">Novo Rexistro Empresas</a>
+    <a href="persoas/index.php">Index Persoas</a><br>
+    <a href="persoas/functions/nuevo.php">Novo Rexistro Persoas</a>
 
-  <br><br>
+    <br><br>
 
-  <a href="login/logout.php">Saír da sesión</a>
+    <a href="empresas/index.php">Index Empresas</a><br>
+    <a href="empresas/functions/nuevo.php">Novo Rexistro Empresas</a>
 
+    <br><br>
+
+    <a href="login/logout.php">Saír da sesión</a>
+  </main>
+
+
+  <!-- footer -->
+  <footer-component></footer-component>
 </body>
 
 </html>

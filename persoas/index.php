@@ -14,7 +14,6 @@ $sql = "SELECT * FROM persoas $where";
 $resultado = $mysqli->query($sql);
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -100,6 +99,7 @@ $resultado = $mysqli->query($sql);
   <!-- <div id="myBtn"><a href="#top" ;><i class="fas fa-chevron-up"></i></a></div> -->
 
   <!-- footer -->
+  <!-- <footer-component></footer-component> -->
 
 </body>
 

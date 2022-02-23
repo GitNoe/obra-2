@@ -16,9 +16,13 @@ require '../../conexion/sesion.php';
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <!-- ESTILOS DE LAS PESTAÑAS Y SU CONTENIDO -> MODIFICAR CON BOOTSTRAP O LO QUE SEA -->
   <link rel="stylesheet" href="../../tabs.css">
+  <script src="../../components/js/header.js"></script>
+  <script src="../../components/js/footer.js"></script>
 </head>
 
 <body>
+  <!-- header -->
+  <header-component></header-component>
 
   <!-- ESTRUCTURA PARA TENER VARIAS PESTAÑAS DINÁMICAS EN UNA MISMA PÁGINA -->
   <h2 style="text-align:center">"Novo Rexistro" de Persoa</h2><br>
@@ -457,6 +461,9 @@ require '../../conexion/sesion.php';
 
     </ul>
   </div>
+
+  <!-- footer -->
+  <!-- <footer-component></footer-component> -->
 
   <script src="../../tabs.js"></script>
 

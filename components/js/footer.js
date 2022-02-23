@@ -2,7 +2,7 @@ class Footer extends HTMLElement {
     constructor() {
       super();
     }
-  
+
     connectedCallback() {
         this.innerHTML = `
         <style>
@@ -20,7 +20,7 @@ class Footer extends HTMLElement {
         <div class="container">
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3">
     <div class="col-md-4 d-flex align-items-center">
-     
+
       <span class="text-white">© 2022 Servizo de Orientación Laboral</span>
     </div>
 
@@ -34,5 +34,5 @@ class Footer extends HTMLElement {
         `;
       }
     }
-    
+
     customElements.define('footer-component', Footer);

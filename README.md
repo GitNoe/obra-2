@@ -52,13 +52,13 @@ Carpetas de dependencias: assets, node_modules, scss.
 Archivos sueltos de dependencias.
 
 LOGIN: diseño 1 hecho
-PERSOAS: completo (faltaría enlazar formularios -excepto datos- a tablas de la base) sin estilos
+PERSOAS: completo (faltaría enlazar formularios -excepto datos- a tablas de la base) sin estilos excepto cdn
 
 ## Extensión de la base de datos y Modificación de Código
 
-Registros (persoas y empresas): Sarai
+Registros - index (persoas y empresas), revisión de funciones, buscador: Sarai
 
-Formación y Acciones (persoas): Ángela y Fernando
+Formación y Acciones (persoas), Formularios Empresas: Ángela y Fernando
 
 Experiencia y Ofertas (persoas): Xabi
 
@@ -66,3 +66,9 @@ Método (JS) para tener varias pestañas en una misma página: Noe (ver en nuevo
 
 - Implementación de formularios en la estructura de pestañas
 - Sin header, footer ni estilos que no sean de bootstrap (de momento cdn)
+
+Compilación de formularios y elementos (nuevo y modificar): Noe y Sarai
+
+- Falta empresas
+- Poner algo en citas
+- Menú -> ofertas

@@ -12,8 +12,8 @@
   <link rel="stylesheet" href="../assets/css/login.css">
   <title>Login de Usuario</title>
 </head>
-<!-- MENU SUPERIOR -->
 
+<!-- MENU SUPERIOR -->
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="collapse navbar-collapse justify-content-md-center" id="navlogin">
