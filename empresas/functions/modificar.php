@@ -27,7 +27,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
 <body>
 
   <!-- header -->
-	<header-component></header-component>
+  <header-component></header-component>
 
   <!-- ESTRUCTURA PARA TENER VARIAS PESTAÑAS DINÁMICAS EN UNA MISMA PÁGINA -->
   <h2 style="text-align:center">Prueba de lo que se abriría al clicar "MODIFICAR" de Empresas</h2><br>
@@ -48,51 +48,149 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
         <h3 class="p-5 text-center">MODIFICAR EMPRESA</h3>
 
         <form class="row g-3" method="POST" action="update.php" autocomplete="off">
-          <div class="col-md-4">
 
+          <div class="col-md-4">
             <label for="nome" class="control-label">Nome:</label>
             <div class="col-sm-10">
               <input type="text" class="form-control" id="nombre" name="nome" placeholder="Nome" value="<?php echo $row['nome']; ?>" required>
             </div>
           </div>
 
-		  <input type="hidden" id="id" name="id" value="<?php echo $row['id']; ?>" />
+          <input type="hidden" id="id" name="id" value="<?php echo $row['id']; ?>" />
+
+          <div class="col-md-4">
+            <label for="poboacion" class="ontrol-label">Localidade:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="localidade" name="localidade" placeholder="Localidade..." required>
+            </div>
+          </div>
 
           <div class="col-md-4">
             <label for="poboacion" class="ontrol-label">Poboación:</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="poboacion" name="poboacion" placeholder="Poboacion" value="<?php echo $row['poboacion']; ?>" required>
+              <input type="text" class="form-control" id="poboacion" name="poboacion" placeholder="Poboacion" required>
             </div>
           </div>
+
           <div class="col-md-4">
             <label for="actividade" class="control-label">Actividade:</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="actividade" name="actividade" placeholder="Actividade" value="<?php echo $row['actividade']; ?>" required>
+              <input type="text" class="form-control" id="actividade" name="actividade" placeholder="Actividade" required>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <label for="telefono" class="control-label">Teléfono:</label>
+            <div class="col-sm-10">
+              <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Teléfono" maxlength="9" required>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <label for="telefono" class="control-label">Fax:</label>
+            <div class="col-sm-10">
+              <input type="tel" class="form-control" id="fax" name="fax" placeholder="Número de Fax" maxlength="9">
             </div>
           </div>
 
           <div class="col-md-4">
             <label for="data_alta" class="control-label">Data de alta:</label>
             <div class="col-sm-10">
-              <input type="date" class="form-control" id="email" name="data_incorporacion" placeholder="dd-mm-aa" value="<?php echo $row['data_incorporacion']; ?>" required>
+              <input type="date" class="form-control" id="email" name="data_incorporacion" placeholder="dd-mm-aa" required>
             </div>
           </div>
+
+          <div class="col-md-4">
+            <label for="poboacion" class="ontrol-label">Persoa de Contacto</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="persoa_contacto" name="persoa_contacto" placeholder="" required>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <label for="orientador" class="control-label">Orientador/a</label>
+            <div class="col-sm-10">
+              <select class="form-control" id="orientador" name="orientador">
+                <option value="">Cea Rodríguez, Alberte</option>
+                <option value="">García Barbosa, Eva</option>
+                <option value="">De Monasterio Roldan, Celia</option>
+              </select>
+            </div>
+          </div>
+
           <div class="col-md-4">
             <label for="ofertas_emprego" class="control-label">Ofertas de Emprego:</label>
             <div class="col-sm-10">
-              <input type="number" class="form-control" id="email" name="ofertas_contratacion" placeholder="Ofertas emprego" value="<?php echo $row['ofertas_contratacion']; ?>" required>
+              <input type="number" class="form-control" id="email" name="ofertas_contratacion" placeholder="Ofertas emprego" required>
             </div>
           </div>
+
           <div class="col-md-4">
             <label for="ofertas_formacion" class="control-label">Ofertas de Formación:</label>
             <div class="col-sm-10">
-              <input type="number" class="form-control" id="email" name="ofertas_formacion" placeholder="Ofertas formacion" value="<?php echo $row['ofertas_formacion']; ?>" required>
+              <input type="number" class="form-control" id="email" name="ofertas_formacion" placeholder="Ofertas formacion" required>
+            </div>
+          </div>
+
+          <div>
+            <strong><label for="relacion-conselleria" class="control-label">Relacións coa consellería:</label></strong>
+          </div>
+          <div>
+            <div class="form-check form-check-inline col-2">
+              <input class="form-check-input" type="checkbox" id="asesoramiento_sae" value="option1">
+              <label class="form-check-label" for="asesoramiento_sae">Asesoramiento SAE</label>
+            </div>
+            <div class="form-check form-check-inline col-2">
+              <input class="form-check-input" type="checkbox" id="axudas" value="option2">
+              <label class="form-check-label" for="axudas">Axudas á contratación</label>
+            </div>
+            <div class="form-check form-check-inline col-2">
+              <input class="form-check-input" type="checkbox" id="concesionaria" value="option3">
+              <label class="form-check-label" for="inlineCheckbox3">Concesionaria</label>
+            </div>
+            <div class="form-check form-check-inline col-2">
+              <input class="form-check-input" type="checkbox" id="formación" value="option2">
+              <label class="form-check-label" for="formacion">Formación</label>
+            </div>
+            <div class="form-check form-check-inline col-2">
+              <input class="form-check-input" type="checkbox" id="mailing" value="option3">
+              <label class="form-check-label" for="mailing">Mailing</label>
+            </div>
+          </div>
+
+          <div>
+            <div class="form-check form-check-inline col-2">
+              <input class="form-check-input" type="checkbox" id="oferta" value="option1">
+              <label class="form-check-label" for="oferta">Oferta de emprego</label>
+            </div>
+            <div class="form-check form-check-inline col-2">
+              <input class="form-check-input" type="checkbox" id="practicas" value="option2">
+              <label class="form-check-label" for="practicas">Prácticas</label>
+            </div>
+            <div class="form-check form-check-inline col-2">
+              <input class="form-check-input" type="checkbox" id="prospeccion" value="option3">
+              <label class="form-check-label" for="prospeccion">Prospección</label>
+            </div>
+            <div class="form-check form-check-inline col-2">
+              <input class="form-check-input" type="checkbox" id="proveedor" value="option1">
+              <label class="form-check-label" for="proveedor">Proveedor</label>
+            </div>
+            <div class="form-check form-check-inline col-2">
+              <input class="form-check-input" type="checkbox" id="solicitude" value="option2">
+              <label class="form-check-label" for="solicitude">Solicitude información</label>
+            </div>
+          </div>
+
+          <div>
+            <div class="form-check form-check-inline col-2">
+              <input class="form-check-input" type="checkbox" id="desconocida" value="option1">
+              <label class="form-check-label" for="desconocida">Descoñecida</label>
             </div>
           </div>
 
           <div class="col-md-4">
             <div class="col-sm-offset-2 col-sm-10">
-              <a href="/empresas/index.php" class="btn btn-default">Voltar</a>
+              <a href="../index.php" class="btn btn-default">Voltar</a>
               <button type="submit" class="btn btn-primary">Gardar</button>
             </div>
           </div>
@@ -101,10 +199,12 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
       </li>
 
       <li class="t-content">
-        <p>Contenido Ofertas Formación</p>
+        <p>Non se encontraron Ofertas de Formación</p>
+        <button type="submit" class="btn btn-primary">Crear Oferta</button>
       </li>
       <li class="t-content">
-        <p>Contenido Ofertas Contratació</p>
+        <p>Non se encontraron Ofertas de Contratación</p>
+        <button type="submit" class="btn btn-primary">Crear Oferta</button>
       </li>
 
     </ul>

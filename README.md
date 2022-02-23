@@ -69,6 +69,6 @@ Método (JS) para tener varias pestañas en una misma página: Noe (ver en nuevo
 
 Compilación de formularios y elementos (nuevo y modificar): Noe y Sarai
 
-- Falta empresas
+- Falta empresas -> hecho
 - Poner algo en citas
-- Menú -> ofertas
+- Menú -> ofertas (vacías)

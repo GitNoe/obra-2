@@ -11,6 +11,7 @@ require '../../conexion/sesion.php';
   <link rel="stylesheet" href="assets/css/style.css">
   <!-- CND de bootstrap -> cambiar cuando toque -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
   <!-- ESTILOS DE LAS PESTAÑAS Y SU CONTENIDO -> MODIFICAR CON BOOTSTRAP O LO QUE SEA -->
   <link rel="stylesheet" href="../../tabs.css">
   <script src="../../components/js/header.js"></script>
@@ -122,11 +123,10 @@ require '../../conexion/sesion.php';
             </div>
           </div>
 
-
-
-
           <div>
-            <h4>RELACIÓN COA CONCELLERÍA</h4>
+            <strong><label for="relacion-conselleria" class="control-label">Relacións coa consellería:</label></strong>
+          </div>
+          <div>
             <div class="form-check form-check-inline col-2">
               <input class="form-check-input" type="checkbox" id="asesoramiento_sae" value="option1">
               <label class="form-check-label" for="asesoramiento_sae">Asesoramiento SAE</label>
@@ -138,14 +138,6 @@ require '../../conexion/sesion.php';
             <div class="form-check form-check-inline col-2">
               <input class="form-check-input" type="checkbox" id="concesionaria" value="option3">
               <label class="form-check-label" for="inlineCheckbox3">Concesionaria</label>
-            </div>
-
-          </div>
-
-          <div>
-            <div class="form-check form-check-inline col-2">
-              <input class="form-check-input" type="checkbox" id="desconocida" value="option1">
-              <label class="form-check-label" for="desconocida">Descoñecida</label>
             </div>
             <div class="form-check form-check-inline col-2">
               <input class="form-check-input" type="checkbox" id="formación" value="option2">
@@ -170,9 +162,6 @@ require '../../conexion/sesion.php';
               <input class="form-check-input" type="checkbox" id="prospeccion" value="option3">
               <label class="form-check-label" for="prospeccion">Prospección</label>
             </div>
-          </div>
-
-          <div>
             <div class="form-check form-check-inline col-2">
               <input class="form-check-input" type="checkbox" id="proveedor" value="option1">
               <label class="form-check-label" for="proveedor">Proveedor</label>
@@ -181,7 +170,13 @@ require '../../conexion/sesion.php';
               <input class="form-check-input" type="checkbox" id="solicitude" value="option2">
               <label class="form-check-label" for="solicitude">Solicitude información</label>
             </div>
+          </div>
 
+          <div>
+            <div class="form-check form-check-inline col-2">
+              <input class="form-check-input" type="checkbox" id="desconocida" value="option1">
+              <label class="form-check-label" for="desconocida">Descoñecida</label>
+            </div>
           </div>
 
           <div class="col-md-4">
@@ -196,9 +191,11 @@ require '../../conexion/sesion.php';
 
       <li class="t-content">
         <p>Non se encontraron Ofertas de Formación</p>
+        <button type="submit" class="btn btn-primary">Crear Oferta</button>
       </li>
       <li class="t-content">
         <p>Non se encontraron Ofertas de Contratación</p>
+        <button type="submit" class="btn btn-primary">Crear Oferta</button>
       </li>
 
     </ul>
