@@ -3,6 +3,9 @@ require '../../conexion/conexion.php';
 require '../../conexion/sesion.php';
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,6 +33,7 @@ require '../../conexion/sesion.php';
 
     <ul class="t-tabs">
       <li class="t-tab">Datos Empresa</li>
+      <li class="t-tab">Seguimento</li>
       <li class="t-tab">Ofertas de Formación</li>
       <li class="t-tab">Ofertas de Contratación</li>
       <li class="t-tab"><a href="../../login/logout.php">Saír da sesión</a></li>
@@ -39,7 +43,7 @@ require '../../conexion/sesion.php';
 
       <li class="t-content">
         <!-- <p>Contenido Datos</p> -->
-        <h3 class="p-5 text-center">NOVA EMPRESA</h3>
+        <h3 class="p-5 text-left">NOVA EMPRESA</h3>
 
         <form class="row g-3" method="POST" action="guardar.php" autocomplete="off">
           <div class="col-md-4">
@@ -179,6 +183,11 @@ require '../../conexion/sesion.php';
             </div>
           </div>
 
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Notas e consideracións</label>
+            <textarea class="form-control" id="notas" name="notas" rows="3"></textarea>
+          </div>
+
           <div class="col-md-4">
             <div class="col-sm-offset-2 col-sm-10">
               <a href="../index.php" class="btn btn-default">Voltar</a>
@@ -189,6 +198,11 @@ require '../../conexion/sesion.php';
 
       </li>
 
+      <li class="t-content">
+        <h3 class="p-5 text-left">SEGUIMENTO</h3>
+        <!-- BOTON MODAL QUE SE ABRE AL PULSAR EL NUEVO SEGUIMIENTO -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Novo Seguimento</button>
+      </li>
       <li class="t-content">
         <p>Non se encontraron Ofertas de Formación</p>
         <button type="submit" class="btn btn-primary">Crear Oferta</button>
@@ -207,5 +221,58 @@ require '../../conexion/sesion.php';
   <script src="../../tabs.js"></script>
 
 </body>
+
+<!-- FORMULARIO DE LA VENTANA MODAL -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Novo Seguimento</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="guardar.php" autocomplete="off">
+
+          <div class="mb-3">
+            <label for="data_alta" class="control-label">Data de alta:</label>
+            <div class="col-sm-10">
+              <input type="date" class="form-control" id="data_modal" name="data_incorporacion_modal" placeholder="dd-mm-aa" required>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="orientador" class="control-label">Orientador/a</label>
+            <div class="col-sm-10">
+              <select class="form-control" id="orientador_modal" name="orientador_modal">
+                <option value="">Cea Rodríguez, Alberte</option>
+                <option value="">García Barbosa, Eva</option>
+                <option value="">De Monasterio Roldan, Celia</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+            <label for="floatingTextarea">Anotacións</label>
+          </div>
+
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+            <label class="form-check-label" for="inlineCheckbox1">Dispoñible</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+            <label class="form-check-label" for="inlineCheckbox2">Traballa</label>
+          </div>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Pechar</button>
+        <button type="button" class="btn btn-primary">Gardar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 </html>

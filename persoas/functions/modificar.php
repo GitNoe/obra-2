@@ -50,7 +50,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
 
       <li class="t-content">
         <!-- <p>Contenido Datos</p> -->
-        <h3 class="p-5 text-center">MODIFICAR REXISTRO - DATOS</h3>
+        <h3 class="p-5 text-left">MODIFICAR REXISTRO - DATOS</h3>
 
         <form class="row g-3" method="POST" action="update.php" autocomplete="off">
           <div class="col-md-4">
@@ -135,7 +135,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
 
       <li class="t-content">
         <!-- <p>Contenido Formación</p> -->
-        <h3 class="p-5 text-center">MODIFICAR REXISTRO - FORMACIÓN</h3>
+        <h3 class="p-5 text-left">MODIFICAR REXISTRO - FORMACIÓN</h3>
 
         <form class="row g-3" method="POST" action="update.php" autocomplete="off">
 
@@ -275,7 +275,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
 
       <li class="t-content">
         <!-- <p>Contenido Experiencia</p> -->
-        <h3 class="p-5 text-center">MODIFICAR REXISTRO - EXPERIENCIA</h3>
+        <h3 class="p-5 text-left">MODIFICAR REXISTRO - EXPERIENCIA</h3>
 
         <form class="row g-3" method="POST" action="update.php" autocomplete="off">
           <div class="col-md-4">
@@ -312,7 +312,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
 
       <li class="t-content">
         <!-- <p>Contenido Acciones</p> -->
-        <h3 class="p-5 text-center">MODIFICAR REXISTRO - ACCIÓNS</h3>
+        <h3 class="p-5 text-left">MODIFICAR REXISTRO - ACCIÓNS</h3>
 
         <form class="row g-3" method="POST" action="update.php" autocomplete="off">
 
@@ -382,7 +382,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
 
       <li class="t-content">
         <!-- <p>Contenido Ofertas</p> -->
-        <h3 class="p-5 text-center">MODIFICAR REXISTRO - OFERTAS</h3>
+        <h3 class="p-5 text-left">MODIFICAR REXISTRO - OFERTAS</h3>
 
         <form class="row g-3" method="POST" action="update.php" autocomplete="off">
           <div class="col-md-4">

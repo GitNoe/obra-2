@@ -28,6 +28,11 @@ require 'conexion/sesion.php';
     <h1 style="color: red">Welcome to SOL</h1>
     <br><br>
 
+    <a href="citas/index.php">Index Citas</a><br>
+    <a href="citas/crear.php">Crear cita</a>
+
+    <br><br>
+
     <a href="persoas/index.php">Index Persoas</a><br>
     <a href="persoas/functions/nuevo.php">Novo Rexistro Persoas</a>
 

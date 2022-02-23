@@ -65,10 +65,12 @@ Experiencia y Ofertas (persoas): Xabi
 Método (JS) para tener varias pestañas en una misma página: Noe (ver en nuevo.php de persoas o empresas)
 
 - Implementación de formularios en la estructura de pestañas
+- Organización de pestañas y contenidos
 - Sin header, footer ni estilos que no sean de bootstrap (de momento cdn)
 
 Compilación de formularios y elementos (nuevo y modificar): Noe y Sarai
 
 - Falta empresas -> hecho
-- Poner algo en citas
+- Poner algo en citas -> reorganización de index y crear nueva (con insert), borrar vacia
+  - Hay un archivo css y otro js de la obra anterior en la carpeta para la funcionalidad
 - Menú -> ofertas (vacías)

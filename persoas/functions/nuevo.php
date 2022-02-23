@@ -43,7 +43,7 @@ require '../../conexion/sesion.php';
 
       <li class="t-content">
         <!-- <p>Contenido Datos</p> -->
-        <h3 class="p-5 text-center">NOVO REXISTRO - DATOS</h3>
+        <h3 class="p-5 text-left">NOVO REXISTRO - DATOS</h3>
 
         <form class="row g-3" method="POST" action="guardar.php" autocomplete="off">
 
@@ -128,7 +128,7 @@ require '../../conexion/sesion.php';
 
       <li class="t-content">
         <!-- <p>Contenido Formación</p> -->
-        <h3 class="p-5 text-center">NOVO REXISTRO - FORMACIÓN</h3>
+        <h3 class="p-5 text-left">NOVO REXISTRO - FORMACIÓN</h3>
 
         <form class="row g-3" method="POST" action="guardar.php" autocomplete="off">
 
@@ -268,7 +268,7 @@ require '../../conexion/sesion.php';
 
       <li class="t-content">
         <!-- <p>Contenido Experiencia</p> -->
-        <h3 class="p-5 text-center">NOVO REXISTRO - EXPERIENCIA</h3>
+        <h3 class="p-5 text-left">NOVO REXISTRO - EXPERIENCIA</h3>
 
         <form class="row g-3" method="POST" action="guardar.php" autocomplete="off">
           <div class="col-md-4">
@@ -305,7 +305,7 @@ require '../../conexion/sesion.php';
 
       <li class="t-content">
         <!-- <p>Contenido Acciones</p> -->
-        <h3 class="p-5 text-center">NOVO REXISTRO - ACCIÓNS</h3>
+        <h3 class="p-5 text-left">NOVO REXISTRO - ACCIÓNS</h3>
 
         <form class="row g-3" method="POST" action="guardar.php" autocomplete="off">
 
@@ -375,7 +375,7 @@ require '../../conexion/sesion.php';
 
       <li class="t-content">
         <!-- <p>Contenido Ofertas</p> -->
-        <h3 class="p-5 text-center">NOVO REXISTRO - OFERTAS</h3>
+        <h3 class="p-5 text-left">NOVO REXISTRO - OFERTAS</h3>
 
         <form class="row g-3" method="POST" action="guardar.php" autocomplete="off">
           <div class="col-md-4">
