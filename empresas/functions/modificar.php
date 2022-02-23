@@ -14,14 +14,13 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nueva Empresa</title>
-  <!-- esto no sirve no? -->
-  <link rel="stylesheet" href="assets/css/style.css">
   <!-- CND de bootstrap -> cambiar cuando toque -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <!-- ESTILOS DE LAS PESTAÑAS Y SU CONTENIDO -> MODIFICAR CON BOOTSTRAP O LO QUE SEA -->
   <link rel="stylesheet" href="../../tabs.css">
-  <script src="../../components/js/header.js"></script>
-  <script src="../../components/js/footer.js"></script>
+  <link rel="stylesheet" href="../../assets/css/index.css">
+  <script src="../../components/js/header2.js"></script>
+  <script src="../../components/js/footer2.js"></script>
 </head>
 
 <body>
@@ -30,7 +29,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
   <header-component></header-component>
 
   <!-- ESTRUCTURA PARA TENER VARIAS PESTAÑAS DINÁMICAS EN UNA MISMA PÁGINA -->
-  <h2 style="text-align:center">Prueba de lo que se abriría al clicar "MODIFICAR" de Empresas</h2><br>
+  <h2 style="text-align:center">Modificar Empresa</h2><br>
 
   <div class="t-container">
 
@@ -221,7 +220,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
   </div>
 
   <!-- footer -->
-  <!-- <footer-component></footer-component> -->
+  <footer-component></footer-component>
 
   <script src="../../tabs.js"></script>
 

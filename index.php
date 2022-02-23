@@ -15,8 +15,8 @@ require 'conexion/sesion.php';
   <title>OBRA 2 SOL</title>
   <!-- CND de bootstrap -> cambiar cuando toque -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <script src="../components/js/header.js"></script>
-  <script src="../components/js/footer.js"></script>
+  <script src="../components/js/header2.js"></script>
+  <script src="../components/js/footer2.js"></script>
 </head>
 
 <body>

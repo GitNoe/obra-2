@@ -3,24 +3,31 @@
 
 <head>
   <meta charset="UTF-8">
-  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script src="../components/js/footer.js"></script>
   <link href="../css/bootstrap.min.css" rel="stylesheet">
-  <link href="../css/bootstrap-theme.css" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/login.css">
+  <link href="../assets/css/login.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="../components/js/footer2.js"></script>
   <title>Login de Usuario</title>
 </head>
 
 <!-- MENU SUPERIOR -->
-<header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="collapse navbar-collapse justify-content-md-center" id="navlogin">
-      <h1 id="solh1" class="text-white">Servizo de Orientación Laboral</h1>
-    </div>
-  </nav>
-</header>
+<header class="p-1 mb-3 border-bottom color">
+
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+          <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+              <use xlink:href="#bootstrap" />
+            </svg>
+          </a>
+          <div class='menu-bar-navigation-links'>
+            <h1>Servizo de Orientación Laboral</h1>
+
+          </div>
+        </div>
+      </div>
+    </header>
 
 <main>
   <!-- FORMULARIO -->
@@ -59,7 +66,7 @@
           <input type="checkbox" value="remember-me"> Recórdame
         </label>
       </div>
-      <button class="w-100 btn btn-lg btn-secondary" type="submit">Iniciar</button>
+      <button class="w-100 btn btn-lg btn-secondary" type="submit">ACCEDER</button>
 
     </form>
   </div>
