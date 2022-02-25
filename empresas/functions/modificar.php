@@ -17,7 +17,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
   <!-- CND de bootstrap -> cambiar cuando toque -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <!-- ESTILOS DE LAS PESTAÑAS Y SU CONTENIDO -> MODIFICAR CON BOOTSTRAP O LO QUE SEA -->
-  <link rel="stylesheet" href="../../tabs.css">
+  <!-- <link rel="stylesheet" href="../../tabs.css"> -->
   <link rel="stylesheet" href="../../assets/css/index.css">
   <script src="../../components/js/header2.js"></script>
   <script src="../../components/js/footer2.js"></script>
@@ -35,9 +35,10 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
 
     <ul class="t-tabs">
       <li class="t-tab">Datos Empresa</li>
+      <li class="t-tab">Seguimento</li>
       <li class="t-tab">Ofertas de Formación</li>
       <li class="t-tab">Ofertas de Contratación</li>
-      <li class="t-tab"><a href="../../login/logout.php">Saír da sesión</a></li>
+      <li class="t-tab"><a class="text-decoration-none" href="../index.php">Voltar a Empresas</a></li>
     </ul>
 
     <ul class="t-contents">
@@ -203,7 +204,8 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
       </li>
 
       <li class="t-content">
-        <h3 class="p-5 text-left">SEGUIMENTO</h3>
+        <!-- <h3 class="p-5 text-left">SEGUIMENTO</h3> -->
+        <p>Non se atoparon Seguimentos.</p>
         <!-- BOTON MODAL QUE SE ABRE AL PULSAR EL NUEVO SEGUIMIENTO -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Novo Seguimento</button>
       </li>

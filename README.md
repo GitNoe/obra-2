@@ -51,7 +51,7 @@ La organización se hace por carpetas para evitar confusiones o duplicación de 
 Carpetas de dependencias: assets, node_modules, scss.
 Archivos sueltos de dependencias.
 
-LOGIN: diseño 1 hecho
+LOGIN: diseños 1 y 2 hechos
 PERSOAS: completo (faltaría enlazar formularios -excepto datos- a tablas de la base) sin estilos excepto cdn
 
 ## Extensión de la base de datos y Modificación de Código
@@ -66,11 +66,16 @@ Método (JS) para tener varias pestañas en una misma página: Noe (ver en nuevo
 
 - Implementación de formularios en la estructura de pestañas
 - Organización de pestañas y contenidos
-- Sin header, footer ni estilos que no sean de bootstrap (de momento cdn)
+- Sin header, footer ni estilos que no sean de bootstrap (de momento cdn) -> estilo y componentes grupo Paloma
 
 Compilación de formularios y elementos (nuevo y modificar): Noe y Sarai
 
 - Falta empresas -> hecho
-- Poner algo en citas -> reorganización de index y crear nueva (con insert), borrar vacia
+- Poner algo en citas -> reorganización de index y crear nueva (con insert), borrar vacia -> Noe
   - Hay un archivo css y otro js de la obra anterior en la carpeta para la funcionalidad
-- Menú -> ofertas (vacías)
+- Menú -> ofertas y consultas (vacías) de momento sin crear en el menú
+
+Qué se está haciendo ahora:
+
+- Noe: revisión de código y modificaciones, implementar estilos, modificación de footer.js, index del sol
+- Sarai, Ángela, Fer: paginación de las tablas (límite de filas) y modales/avisos de funciones

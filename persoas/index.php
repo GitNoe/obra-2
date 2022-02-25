@@ -39,39 +39,50 @@ $resultado = $mysqli->query($sql);
   <!-- main -->
   <!-- container, botón nuevo, buscador, tabla -->
   <div class="container">
-    <h2 style="text-align:center">Persoas</h2>
+    <!-- <h2 style="text-align:center">Persoas</h2> -->
 
-    <div class="row">
-      <a href="functions/nuevo.php" class="btn btn-primary mb-4">Novo Rexistro</a>
-    </div>
+    <div class="row"></div>
+    <div class="row"></div>
 
-    <div class="row">
-      <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
-        <div class="input-group mb-3 w-6">
-          <label class="col-1" for="campo">Búsqueda por NIF</label>
-          <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
-          <input type="text" class="form-control" type="text" id="campo" name="campo">
-          <input type="submit" id="enviar" name="enviar" value="Buscar" class="btn btn-info" />
-        </div>
-      </form>
-    </div>
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <h3>PERSOAS</h3>
 
-    <br>
+        <form class="d-flex" action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
+          <a href="functions/nuevo.php" class="btn btn-outline-success mb-3 personita">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
+              <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
+              <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z">
+              </path>
+            </svg>
+          </a>
+
+          <div class="input-group mb-3 w-6">
+
+            <input id="campo" name="campo" class="form-control me-2 ml-1" type="text" placeholder="Búsqueda por NIF" aria-label="Search">
+            <input type="submit" id="enviar" name="enviar" value="Buscar" class="btn btn-outline-success">
+          </div>
+        </form>
+      </div>
+    </nav>
+
+
+    <hr>
 
     <div class="row table-responsive">
       <table class="table table-striped table-hover">
         <thead>
           <tr>
             <th class="col-sm-1">ID</th>
-						<th class="col-sm-1">Nombre</th>
-						<th class="col-sm-3">Primeiro Apelido</th>
-						<th class="col-sm-3">Segundo Apelido</th>
-						<th class="col-sm-1">DNI/NIF</th>
-						<th class="col-sm-3">Data de nacemento</th>
-						<th class="col-sm-1">Sexo</th>
-						<th class="col-sm-3">Código postal</th>
-						<th class="col-sm-1">Teléfono</th>
-						<th class="col-sm-2">Email</th>
+            <th class="col-sm-1">Nombre</th>
+            <th class="col-sm-3">Primeiro Apelido</th>
+            <th class="col-sm-3">Segundo Apelido</th>
+            <th class="col-sm-1">DNI/NIF</th>
+            <th class="col-sm-3">Data de nacemento</th>
+            <th class="col-sm-1">Sexo</th>
+            <th class="col-sm-3">Código postal</th>
+            <th class="col-sm-1">Teléfono</th>
+            <th class="col-sm-2">Email</th>
           </tr>
         </thead>
 
@@ -88,9 +99,22 @@ $resultado = $mysqli->query($sql);
               <td><?php echo $row['codigo_postal']; ?></td>
               <td><?php echo $row['telefono']; ?></td>
               <td><?php echo $row['email']; ?></td>
-              <td><a href="#"><i class="fa-solid fa-eye"></i></a></td>
-              <td><a href="functions/modificar.php?id=<?php echo $row['id']; ?>"><i class="fas fa-pencil-alt"></i></a></td>
-              <td><a href="functions/eliminar.php?id=<?php echo $row['id'] ?>"><i class="fas fa-trash-alt"></i></a></td>
+              <!-- <td><a href="#"><i class="fa-solid fa-eye"></i></a></td>
+                <td><a href="functions/modificar.php?id=<?php echo $row['id']; ?>"><i class="fas fa-pencil-alt"></i></a></td>
+                <td><a href="functions/eliminar.php?id=<?php echo $row['id'] ?>"><i class="fas fa-trash-alt"></i></a></td> -->
+              <td><a class="red-icons" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                    <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+                    <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+                  </svg></a>
+              </td>
+              <td><a class="red-icons" href="functions/modificar.php?id=<?php echo $row['id']; ?>"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">
+                    <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z" />
+                  </svg></a>
+              </td>
+              <td><a class="red-icons" href="functions/eliminar.php?id=<?php echo $row['id'] ?>"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                    <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                  </svg></a>
+              </td>
             </tr>
           <?php } ?>
         </tbody>
@@ -98,6 +122,7 @@ $resultado = $mysqli->query($sql);
     </div>
   </div>
 
+  <!-- ESTA ERA LA FLECHA QUE SUBÍA -->
   <!-- <button id="myBtn"><a href="#top" style="color: white; text-decoration: none";><i class="fas fa-chevron-up"></i></a></button> -->
   <!-- <div id="myBtn"><a href="#top" ;><i class="fas fa-chevron-up"></i></a></div> -->
 

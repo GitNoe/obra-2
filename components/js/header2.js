@@ -83,3 +83,5 @@ class Header extends HTMLElement {
   }
 }
 customElements.define("header-component", Header);
+
+// <li><a href="#" class="nav-link px-2 link-2">CONSULTAS</a></li>
