@@ -3,7 +3,7 @@
 require '../../conexion/conexion.php';
 require '../../conexion/sesion.php';
 
-$id = $_POST['id'];
+// $id = $_POST['id'];
 $nome = $_POST['nome'];
 $primeiro_apelido = $_POST['primeiro_apelido'];
 $segundo_apelido = $_POST['segundo_apelido'];

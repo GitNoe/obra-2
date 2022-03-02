@@ -87,8 +87,8 @@ $resultado = $mysqli->query($sql);
               <td><?php echo $row['poboacion']; ?></td>
               <td><?php echo $row['actividade']; ?></td>
               <td><?php echo $row['data_incorporacion']; ?></td>
-              <td></td>
-              <td></td>
+              <td><?php echo $row['telefono']; ?></td>
+              <td><?php echo $row['fax']; ?></td>
               <!-- <td><?php echo $row['ofertas_contratacion']; ?></td> -->
               <!-- <td><?php echo $row['ofertas_formacion']; ?></td> -->
               <!-- <td><a href="#"><i class="fa-solid fa-eye"></i></a></td>

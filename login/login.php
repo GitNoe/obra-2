@@ -11,6 +11,8 @@
   <title>Login de Usuario</title>
 </head>
 
+<body>
+
 <!-- MENU SUPERIOR -->
 <header class="p-1 mb-3 border-bottom color">
 

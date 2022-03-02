@@ -66,7 +66,6 @@ $resultado = $mysqli->query($sql);
       </div>
     </nav>
 
-
     <hr>
 
     <div class="row table-responsive">

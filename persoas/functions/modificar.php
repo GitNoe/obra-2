@@ -446,7 +446,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
 
     </ul>
   </div>
-  </main>
+</main>
   <!-- footer -->
   <footer-component></footer-component>
 

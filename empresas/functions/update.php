@@ -4,15 +4,24 @@ require '../../conexion/conexion.php';
 require '../../conexion/sesion.php';
 
 
-$id = $_POST['id'];
+// $id = $_POST['id'];
 $nome = $_POST['nome'];
+$localidade = $_POST['localidade'];
 $poboacion = $_POST['poboacion'];
 $actividade = $_POST['actividade'];
+$telefono = $_POST['telefono'];
+$fax = $_POST['fax'];
 $data_incorporacion = $_POST['data_incorporacion'];
+$persoa_contacto = $_POST['persoa_contacto'];
+$orientador = $_POST['orientador'];
 $ofertas_contratacion = $_POST['ofertas_contratacion'];
 $ofertas_formacion = $_POST['ofertas_formacion'];
+$notas = $_POST['notas'];
 
-$sql = "UPDATE empresas SET nome='$nome', poboacion='$poboacion', actividade='$actividade', data_incorporacion='$data_incorporacion', ofertas_contratacion='$ofertas_contratacion', ofertas_formacion='$ofertas_formacion' WHERE id='$id'";
+$sql = "UPDATE empresas SET nome='$nome', localidade='$localidade', poboacion='$poboacion', actividade='$actividade',
+telefono='$telefono', fax='$fax', data_incorporacion='$data_incorporacion', persoa_contacto='$persoa_contacto',
+orientador='$orientador', ofertas_contratacion='$ofertas_contratacion', ofertas_formacion='$ofertas_formacion',
+notas='$notas' WHERE id='$id'";
 $resultado = $mysqli->query($sql);
 ?>
 

@@ -4,13 +4,20 @@ require '../../conexion/conexion.php';
 require '../../conexion/sesion.php';
 
 $nome = $_POST['nome'];
+$localidade = $_POST['localidade'];
 $poboacion = $_POST['poboacion'];
 $actividade = $_POST['actividade'];
+$telefono = $_POST['telefono'];
+$fax = $_POST['fax'];
 $data_incorporacion = $_POST['data_incorporacion'];
+$persoa_contacto = $_POST['persoa_contacto'];
+$orientador = $_POST['orientador'];
 $ofertas_contratacion = $_POST['ofertas_contratacion'];
 $ofertas_formacion = $_POST['ofertas_formacion'];
+$notas = $_POST['notas'];
 
-$sql = "INSERT INTO empresas (nome, poboacion, actividade, data_incorporacion, ofertas_contratacion, ofertas_formacion) VALUES ('$nome', '$poboacion', '$actividade', '$data_incorporacion', '$ofertas_contratacion', '$ofertas_formacion')";
+$sql = "INSERT INTO empresas (nome, localidade, poboacion, actividade, telefono, fax, data_incorporacion, persoa_contacto, orientador, ofertas_contratacion, ofertas_formacion, notas)
+VALUES ('$nome', '$localidade', '$poboacion', '$actividade','$telefono', '$fax', '$data_incorporacion', '$persoa_contacto', '$orientador', '$ofertas_contratacion', '$ofertas_formacion', '$notas')";
 $resultado = $mysqli->query($sql);
 
 ?>
