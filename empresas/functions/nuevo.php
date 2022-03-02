@@ -27,25 +27,26 @@ require '../../conexion/sesion.php';
 
   <!-- <div class="container"> -->
   <!-- ESTRUCTURA PARA TENER VARIAS PESTAÑAS DINÁMICAS EN UNA MISMA PÁGINA -->
-  <h2 style="text-align:center">"Novo Rexistro" de Empresa</h2><br>
+  <!-- <h2 style="text-align:center">"Novo Rexistro" de Empresa</h2><br> -->
+  <h5 class="p-2 success text-center">NOVO REXISTRO DE EMPRESA</h5>
 
-  <div class="t-container">
+  <div class="t-container my-4">
 
-    <ul class="t-tabs">
-      <li class="t-tab">Datos Empresa</li>
-      <li class="t-tab">Seguimento</li>
-      <li class="t-tab">Ofertas de Formación</li>
-      <li class="t-tab">Ofertas de Contratación</li>
-      <li class="t-tab"><a class="text-decoration-none" href="../index.php">Voltar a Empresas</a></li>
+    <ul class="nav t-tabs">
+      <li class="nav-link t-tab">Datos Empresa</li>
+      <li class="nav-link t-tab">Seguimento</li>
+      <li class="nav-link t-tab">Ofertas de Formación</li>
+      <li class="nav-link t-tab">Ofertas de Contratación</li>
+      <li class="nav-link t-tab"><a class="text-decoration-none" href="../index.php">Voltar a Empresas</a></li>
     </ul>
 
     <ul class="t-contents">
 
       <li class="t-content">
         <!-- <p>Contenido Datos</p> -->
-        <h3 class="p-5 text-left">NOVA EMPRESA</h3>
+        <!-- <h3 class="p-5 text-left">NOVA EMPRESA</h3> -->
 
-        <form class="row g-3" method="POST" action="guardar.php" autocomplete="off">
+        <form class="row g-3 mt-4" method="POST" action="guardar.php" autocomplete="off">
           <div class="col-md-4">
             <label for="nome" class="control-label">Nome:</label>
             <div class="col-sm-10">
@@ -54,14 +55,14 @@ require '../../conexion/sesion.php';
           </div>
 
           <div class="col-md-4">
-            <label for="poboacion" class="ontrol-label">Localidade:</label>
+            <label for="poboacion" class="control-label">Localidade:</label>
             <div class="col-sm-10">
               <input type="text" class="form-control" id="localidade" name="localidade" placeholder="Localidade..." required>
             </div>
           </div>
 
           <div class="col-md-4">
-            <label for="poboacion" class="ontrol-label">Poboación:</label>
+            <label for="poboacion" class="control-label">Poboación:</label>
             <div class="col-sm-10">
               <input type="text" class="form-control" id="poboacion" name="poboacion" placeholder="Poboacion" required>
             </div>
@@ -96,7 +97,7 @@ require '../../conexion/sesion.php';
           </div>
 
           <div class="col-md-4">
-            <label for="poboacion" class="ontrol-label">Persoa de Contacto</label>
+            <label for="poboacion" class="control-label">Persoa de Contacto</label>
             <div class="col-sm-10">
               <input type="text" class="form-control" id="persoa_contacto" name="persoa_contacto" placeholder="" required>
             </div>
@@ -184,7 +185,7 @@ require '../../conexion/sesion.php';
           </div>
 
           <div class="form-group">
-            <label for="exampleFormControlTextarea1">Notas e consideracións</label>
+            <label for="exampleFormControlTextarea1" class="control-label">Notas e consideracións</label>
             <textarea class="form-control" id="notas" name="notas" rows="3"></textarea>
           </div>
 

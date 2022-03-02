@@ -30,28 +30,30 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
 
   <!-- header -->
   <header-component></header-component>
-
+<main>
   <!-- ESTRUCTURA PARA TENER VARIAS PESTAÑAS DINÁMICAS EN UNA MISMA PÁGINA -->
-  <h2 style="text-align:center">Modificar Persoa</h2><br>
+  <!-- <h2 style="text-align:center">Modificar Persoa</h2><br> -->
+  <h5 class="p-2 success text-center">MODIFICAR REXISTRO DE PERSOA</h5>
 
-  <div class="t-container">
+  <div class="t-container my-4">
 
-    <ul class="t-tabs">
-      <li class="t-tab">Datos Personales</li>
-      <li class="t-tab">Formación</li>
-      <li class="t-tab">Experiencia</li>
-      <li class="t-tab">Acciones</li>
-      <li class="t-tab">Ofertas</li>
-      <li class="t-tab"><a class="text-decoration-none" href="../index.php">Voltar a Persoas</a></li>
+    <ul class="nav t-tabs">
+      <li class="nav-link t-tab">Datos Personales</li>
+      <li class="nav-link t-tab">Formación</li>
+      <li class="nav-link t-tab">Experiencia</li>
+      <li class="nav-link t-tab">Acciones</li>
+      <li class="nav-link t-tab">Ofertas</li>
+      <li class="nav-link t-tab"><a class="text-decoration-none" href="../index.php">Voltar a Persoas</a></li>
     </ul>
 
     <ul class="t-contents">
 
       <li class="t-content">
         <!-- <p>Contenido Datos</p> -->
-        <h3 class="p-5 text-left">MODIFICAR REXISTRO - DATOS</h3>
+        <!-- <h3 class="p-5 text-left">MODIFICAR REXISTRO - DATOS</h3> -->
 
         <form class="row g-3" method="POST" action="update.php" autocomplete="off">
+
           <div class="col-md-4">
             <label for="nome" class=" control-label">Nome:</label>
             <div class="col-sm-10">
@@ -134,7 +136,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
 
       <li class="t-content">
         <!-- <p>Contenido Formación</p> -->
-        <h3 class="p-5 text-left">MODIFICAR REXISTRO - FORMACIÓN</h3>
+        <!-- <h3 class="p-5 text-left">MODIFICAR REXISTRO - FORMACIÓN</h3> -->
 
         <form class="row g-3" method="POST" action="update.php" autocomplete="off">
 
@@ -274,7 +276,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
 
       <li class="t-content">
         <!-- <p>Contenido Experiencia</p> -->
-        <h3 class="p-5 text-left">MODIFICAR REXISTRO - EXPERIENCIA</h3>
+        <!-- <h3 class="p-5 text-left">MODIFICAR REXISTRO - EXPERIENCIA</h3> -->
 
         <form class="row g-3" method="POST" action="update.php" autocomplete="off">
           <div class="col-md-4">
@@ -311,7 +313,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
 
       <li class="t-content">
         <!-- <p>Contenido Acciones</p> -->
-        <h3 class="p-5 text-left">MODIFICAR REXISTRO - ACCIÓNS</h3>
+        <!-- <h3 class="p-5 text-left">MODIFICAR REXISTRO - ACCIÓNS</h3> -->
 
         <form class="row g-3" method="POST" action="update.php" autocomplete="off">
 
@@ -381,7 +383,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
 
       <li class="t-content">
         <!-- <p>Contenido Ofertas</p> -->
-        <h3 class="p-5 text-left">MODIFICAR REXISTRO - OFERTAS</h3>
+        <!-- <h3 class="p-5 text-left">MODIFICAR REXISTRO - OFERTAS</h3> -->
 
         <form class="row g-3" method="POST" action="update.php" autocomplete="off">
           <div class="col-md-4">
@@ -444,7 +446,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
 
     </ul>
   </div>
-
+  </main>
   <!-- footer -->
   <footer-component></footer-component>
 

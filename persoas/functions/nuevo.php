@@ -23,28 +23,28 @@ require '../../conexion/sesion.php';
   <!-- header -->
   <header-component></header-component>
 
-  <!-- <main class="container"> -->
+<main>
   <!-- ESTRUCTURA PARA TENER VARIAS PESTAÑAS DINÁMICAS EN UNA MISMA PÁGINA -->
-  <div class="row"><h2 style="text-align:center">"Novo Rexistro" de Persoa</h2></div>
+  <!-- <div class="row"><h2 style="text-align:center">"Novo Rexistro" de Persoa</h2></div> -->
+  <h5 class="p-2 success text-center">NOVO REXISTRO DE PERSOA</h5>
+  <div class="t-container my-4">
 
-  <div class="t-container">
-
-    <ul class="t-tabs">
-      <li class="t-tab">Datos Personais</li>
-      <li class="t-tab">Formación</li>
-      <li class="t-tab">Experiencia</li>
-      <li class="t-tab">Accións</li>
-      <li class="t-tab">Ofertas</li>
-      <li class="t-tab"><a class="text-decoration-none" href="../index.php">Voltar a Persoas</a></li>
+    <ul class="nav t-tabs">
+      <li class="nav-link t-tab">Datos Personais</li>
+      <li class="nav-link t-tab">Formación</li>
+      <li class="nav-link t-tab">Experiencia</li>
+      <li class="nav-link t-tab">Accións</li>
+      <li class="nav-link t-tab">Ofertas</li>
+      <li class="nav-link t-tab"><a class="text-decoration-none" href="../index.php">Voltar a Persoas</a></li>
     </ul>
 
     <ul class="t-contents">
 
       <li class="t-content">
         <!-- <p>Contenido Datos</p> -->
-        <h3 class="p-5 text-left">NOVO REXISTRO - DATOS</h3>
+        <!-- <h3 class="p-5 text-left">NOVO REXISTRO - DATOS</h3> -->
 
-        <form class="row g-3" method="POST" action="guardar.php" autocomplete="off">
+        <form class="row g-3 mt-4" method="POST" action="guardar.php" autocomplete="off">
 
           <div class="col-md-4">
             <label for="nome" class=" control-label">Nome:</label>
@@ -116,7 +116,7 @@ require '../../conexion/sesion.php';
           <br>
           <br>
           <div class="col-md-4">
-            <div class="">
+            <div class="my-4">
               <a href="../index.php" class="btn btn-default">VOLTAR</a>
               <button type="submit" class="btn btn-primary">GARDAR</button>
             </div>
@@ -127,9 +127,9 @@ require '../../conexion/sesion.php';
 
       <li class="t-content">
         <!-- <p>Contenido Formación</p> -->
-        <h3 class="p-5 text-left">NOVO REXISTRO - FORMACIÓN</h3>
+        <!-- <h3 class="p-5 text-left">NOVO REXISTRO - FORMACIÓN</h3> -->
 
-        <form class="row g-3" method="POST" action="guardar.php" autocomplete="off">
+        <form class="row g-3 mt-4" method="POST" action="guardar.php" autocomplete="off">
 
           <div class="col-md-4">
             <label for="estudo" class="control-label">Estudos Básicos</label>
@@ -257,7 +257,7 @@ require '../../conexion/sesion.php';
           <br>
           <br>
           <div class="col-md-4">
-            <div class="">
+            <div class="my-4">
               <a href="../index.php" class="btn btn-default">VOLTAR</a>
               <button type="submit" class="btn btn-primary">GARDAR</button>
             </div>
@@ -267,9 +267,9 @@ require '../../conexion/sesion.php';
 
       <li class="t-content">
         <!-- <p>Contenido Experiencia</p> -->
-        <h3 class="p-5 text-left">NOVO REXISTRO - EXPERIENCIA</h3>
+        <!-- <h3 class="p-5 text-left">NOVO REXISTRO - EXPERIENCIA</h3> -->
 
-        <form class="row g-3" method="POST" action="guardar.php" autocomplete="off">
+        <form class="row g-3 mt-4" method="POST" action="guardar.php" autocomplete="off">
           <div class="col-md-4">
             <label for="ano_comezo" class="control-label">Ano de comezo:</label>
             <div class="col-sm-10">
@@ -294,7 +294,7 @@ require '../../conexion/sesion.php';
           <br>
           <br>
           <div class="col-md-4">
-            <div class="">
+            <div class="my-4">
               <a href="../index.php" class="btn btn-default">VOLTAR</a>
               <button type="submit" class="btn btn-primary">GARDAR</button>
             </div>
@@ -304,9 +304,9 @@ require '../../conexion/sesion.php';
 
       <li class="t-content">
         <!-- <p>Contenido Acciones</p> -->
-        <h3 class="p-5 text-left">NOVO REXISTRO - ACCIÓNS</h3>
+        <!-- <h3 class="p-5 text-left">NOVO REXISTRO - ACCIÓNS</h3> -->
 
-        <form class="row g-3" method="POST" action="guardar.php" autocomplete="off">
+        <form class="row g-3 mt-4" method="POST" action="guardar.php" autocomplete="off">
 
           <div class="col-md-4">
             <label for="data_nacemento" class="control-label">Data da 1ª entrevista</label>
@@ -363,7 +363,7 @@ require '../../conexion/sesion.php';
           <br>
           <br>
           <div class="col-md-4">
-            <div class="">
+            <div class="my-4">
               <a href="../index.php" class="btn btn-default">VOLTAR</a>
               <button type="submit" class="btn btn-primary">GARDAR</button>
             </div>
@@ -374,9 +374,9 @@ require '../../conexion/sesion.php';
 
       <li class="t-content">
         <!-- <p>Contenido Ofertas</p> -->
-        <h3 class="p-5 text-left">NOVO REXISTRO - OFERTAS</h3>
+        <!-- <h3 class="p-5 text-left">NOVO REXISTRO - OFERTAS</h3> -->
 
-        <form class="row g-3" method="POST" action="guardar.php" autocomplete="off">
+        <form class="row g-3 mt-4" method="POST" action="guardar.php" autocomplete="off">
           <div class="col-md-4">
             <label for="ofertade" class="control-label">Tipo de oferta:</label>
             <div class="col-sm-10">
@@ -450,7 +450,7 @@ require '../../conexion/sesion.php';
           <br>
           <br>
           <div class="col-md-4">
-            <div class="">
+            <div class="my-4">
               <a href="../index.php" class="btn btn-default">VOLTAR</a>
               <button type="submit" class="btn btn-primary">GARDAR</button>
             </div>
@@ -460,7 +460,7 @@ require '../../conexion/sesion.php';
 
     </ul>
   </div>
-<!-- </main> -->
+</main>
 
   <!-- footer -->
   <footer-component></footer-component>

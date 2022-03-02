@@ -28,26 +28,27 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
   <!-- header -->
   <header-component></header-component>
 
+  <main>
   <!-- ESTRUCTURA PARA TENER VARIAS PESTAÑAS DINÁMICAS EN UNA MISMA PÁGINA -->
   <h2 style="text-align:center">Modificar Empresa</h2><br>
 
-  <div class="t-container">
+  <div class="t-container my-4">
 
-    <ul class="t-tabs">
-      <li class="t-tab">Datos Empresa</li>
-      <li class="t-tab">Seguimento</li>
-      <li class="t-tab">Ofertas de Formación</li>
-      <li class="t-tab">Ofertas de Contratación</li>
-      <li class="t-tab"><a class="text-decoration-none" href="../index.php">Voltar a Empresas</a></li>
+    <ul class="nav t-tabs">
+      <li class="nav-link t-tab">Datos Empresa</li>
+      <li class="nav-link t-tab">Seguimento</li>
+      <li class="nav-link t-tab">Ofertas de Formación</li>
+      <li class="nav-link t-tab">Ofertas de Contratación</li>
+      <li class="nav-link t-tab"><a class="text-decoration-none" href="../index.php">Voltar a Empresas</a></li>
     </ul>
 
     <ul class="t-contents">
 
       <li class="t-content">
         <!-- <p>Contenido Datos</p> -->
-        <h3 class="p-5 text-left">MODIFICAR EMPRESA</h3>
+        <!-- <h3 class="p-5 text-left">MODIFICAR EMPRESA</h3> -->
 
-        <form class="row g-3" method="POST" action="update.php" autocomplete="off">
+        <form class="row g-3 mt-4" method="POST" action="update.php" autocomplete="off">
 
           <div class="col-md-4">
             <label for="nome" class="control-label">Nome:</label>
@@ -59,14 +60,14 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
           <input type="hidden" id="id" name="id" value="<?php echo $row['id']; ?>" />
 
           <div class="col-md-4">
-            <label for="poboacion" class="ontrol-label">Localidade:</label>
+            <label for="poboacion" class="control-label">Localidade:</label>
             <div class="col-sm-10">
               <input type="text" class="form-control" id="localidade" name="localidade" placeholder="Localidade..." required>
             </div>
           </div>
 
           <div class="col-md-4">
-            <label for="poboacion" class="ontrol-label">Poboación:</label>
+            <label for="poboacion" class="control-label">Poboación:</label>
             <div class="col-sm-10">
               <input type="text" class="form-control" id="poboacion" name="poboacion" placeholder="Poboacion" required>
             </div>
@@ -101,7 +102,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
           </div>
 
           <div class="col-md-4">
-            <label for="poboacion" class="ontrol-label">Persoa de Contacto</label>
+            <label for="poboacion" class="control-label">Persoa de Contacto</label>
             <div class="col-sm-10">
               <input type="text" class="form-control" id="persoa_contacto" name="persoa_contacto" placeholder="" required>
             </div>
@@ -189,7 +190,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
           </div>
 
           <div class="form-group">
-            <label for="exampleFormControlTextarea1">Notas e consideracións</label>
+            <label for="exampleFormControlTextarea1" class="control-label">Notas e consideracións</label>
             <textarea class="form-control" id="notas" name="notas" rows="3"></textarea>
           </div>
 
@@ -220,7 +221,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
 
     </ul>
   </div>
-
+  </main>
   <!-- footer -->
   <footer-component></footer-component>
 
