@@ -41,18 +41,19 @@ Hacer .gitignore con todo menos nuestras carpetas originales.
 
 La organización se hace por carpetas para evitar confusiones o duplicación de código:
 
-- index.php -> pantalla principal a la que se accede tras logearse -> SIN ESTILOS, SOLO LINKS DE PRUEBA
-- conexion (conexion.php + sesion.php) -> HECHO (dos conexiones, una para login y otra para funciones)
-- login (login.php + logout.php) -> HECHO Y 1 DISEÑO LISTO
-- citas, persoas, empresas (aún no completas)
+- index.php -> pantalla principal a la que se accede tras logearse -> HECHO
+- conexion (conexion.php + sesion.php) -> HECHO
+- login (login.php + logout.php) -> HECHO Y DISEÑO LISTO
+- citas, persoas, empresas (completas hasta formularios, tablas, etc.)
 - components (header y footer js) -> HECHOS
-- scss (login)
+- scss (login e index) -> HECHOS
 
 Carpetas de dependencias: assets, node_modules, scss.
 Archivos sueltos de dependencias.
 
 LOGIN: diseños 1 y 2 hechos
-PERSOAS: completo (faltaría enlazar formularios -excepto datos- a tablas de la base) sin estilos excepto cdn
+PERSOAS: completo
+EMPRESAS: completo
 
 ## Extensión de la base de datos y Modificación de Código
 
@@ -78,4 +79,5 @@ Compilación de formularios y elementos (nuevo y modificar): Noe y Sarai
 Qué se está haciendo ahora:
 
 - Noe: revisión de código y modificaciones, implementar estilos, modificación de footer.js, index del sol
-- Sarai, Ángela, Fer: paginación de las tablas (límite de filas) y modales/avisos de funciones
+- Sarai, Ángela, Fer: paginación de las tablas (límite de filas) y modales/avisos de funciones (Paloma)
+- Noe: paginación de persoas, implementación de cambios y estilos con Paloma
