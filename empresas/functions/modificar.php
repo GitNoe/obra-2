@@ -39,7 +39,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
       <li class="nav-link t-tab">Seguimento</li>
       <li class="nav-link t-tab">Ofertas de Formación</li>
       <li class="nav-link t-tab">Ofertas de Contratación</li>
-      <li class="nav-link t-tab"><a class="text-decoration-none" href="../index.php">Voltar a Empresas</a></li>
+      <li class="nav-link t-tab"><a class="text-decoration-none" href="../index.php">Volver a Empresas</a></li>
     </ul>
 
     <ul class="t-contents">
@@ -196,7 +196,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
 
           <div class="col-md-4">
             <div class="col-sm-offset-2 col-sm-10">
-              <a href="../index.php" class="btn btn-default">Voltar</a>
+              <a href="../index.php" class="btn btn-default">Volver</a>
               <button type="submit" class="btn btn-primary">Gardar</button>
             </div>
           </div>

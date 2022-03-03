@@ -56,7 +56,7 @@ require '../conexion/sesion.php';
 
       <div class="row form-group">
         <div class="col-sm-4 mt-5">
-          <a href="./index.php" class="btn btn-default">Voltar</a>
+          <a href="./index.php" class="btn btn-default">Volver</a>
           <button type="submit" class="btn btn-primary">Gardar</button>
         </div>
       </div>

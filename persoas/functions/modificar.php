@@ -43,7 +43,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
       <li class="nav-link t-tab">Experiencia</li>
       <li class="nav-link t-tab">Accións</li>
       <li class="nav-link t-tab">Ofertas</li>
-      <li class="nav-link t-tab"><a class="text-decoration-none" href="../index.php">Voltar a Persoas</a></li>
+      <li class="nav-link t-tab"><a class="text-decoration-none" href="../index.php">Volver a Persoas</a></li>
     </ul>
 
     <ul class="t-contents">
@@ -127,7 +127,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
           <br>
           <div class="col-md-4">
             <div class="">
-              <a href="../index.php" class="btn btn-default">VOLTAR</a>
+              <a href="../index.php" class="btn btn-default">Volver</a>
               <button type="submit" class="btn btn-primary">GARDAR</button>
             </div>
           </div>
@@ -268,7 +268,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
           <br>
           <div class="col-md-4">
             <div class="">
-              <a href="../index.php" class="btn btn-default">VOLTAR</a>
+              <a href="../index.php" class="btn btn-default">Volver</a>
               <button type="submit" class="btn btn-primary">GARDAR</button>
             </div>
           </div>
@@ -305,7 +305,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
           <br>
           <div class="col-md-4">
             <div class="">
-              <a href="../index.php" class="btn btn-default">VOLTAR</a>
+              <a href="../index.php" class="btn btn-default">Volver</a>
               <button type="submit" class="btn btn-primary">GARDAR</button>
             </div>
           </div>
@@ -374,7 +374,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
           <br>
           <div class="col-md-4">
             <div class="">
-              <a href="../index.php" class="btn btn-default">VOLTAR</a>
+              <a href="../index.php" class="btn btn-default">Volver</a>
               <button type="submit" class="btn btn-primary">GARDAR</button>
             </div>
           </div>
@@ -438,7 +438,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
           <br>
           <div class="col-md-4">
             <div class="">
-              <a href="../index.php" class="btn btn-default">VOLTAR</a>
+              <a href="../index.php" class="btn btn-default">Volver</a>
               <button type="submit" class="btn btn-primary">GARDAR</button>
             </div>
           </div>

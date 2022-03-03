@@ -41,7 +41,7 @@ $resultado = $mysqli->query($sql);
         </div>
         <div class="modal-footer flex-column border-top-0">
 
-          <a href="../index.php" class="btn btn-lg btn-outline-success w-50 mx-0 mb-5 mt-4">VOLTAR</a>
+          <a href="../index.php" class="btn btn-lg btn-outline-success w-50 mx-0 mb-5 mt-4">Volver</a>
 
         </div>
       </div>
@@ -57,7 +57,7 @@ $resultado = $mysqli->query($sql);
           <h3>ERRO AO GARDAR</h3>
         <?php } ?>
 
-        <a href="../index.php" class="btn btn-primary">VOLTAR</a>
+        <a href="../index.php" class="btn btn-primary">Volver</a>
 
       </div>
     </div>

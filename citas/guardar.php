@@ -35,7 +35,7 @@ $resultado = $mysqli->query($sql);
           <h3>ERRO AO GARDAR</h3>
         <?php } ?>
 
-        <a href="../index.php" class="btn btn-primary">VOLTAR</a>
+        <a href="../index.php" class="btn btn-primary">Volver</a>
 
       </div>
     </div>
