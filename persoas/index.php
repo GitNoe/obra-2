@@ -46,7 +46,7 @@ $resultado = $mysqli->query($sql);
 
     <nav class="navbar navbar-light bg-light">
       <div class="container-fluid">
-        <h3>PERSOAS</h3>
+        <h5>PERSOAS</h5>
 
         <form class="d-flex" action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
           <a href="functions/nuevo.php" class="btn btn-outline-success mb-3 personita">
@@ -69,7 +69,7 @@ $resultado = $mysqli->query($sql);
     <hr>
 
     <div class="row table-responsive">
-      <table class="table table-striped table-hover">
+      <table class="table table-hover">
         <thead>
           <tr>
             <th class="col-sm-2">Nome</th>

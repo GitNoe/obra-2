@@ -250,7 +250,7 @@ require '../../conexion/sesion.php';
           </div>
 
           <div class="form-group">
-            <label for="exampleFormControlTextarea">Notas e consideracións</label>
+            <label for="exampleFormControlTextarea" class="control-label">Notas e consideracións</label>
             <textarea class="form-control" id="exampleFormControlTextarea" rows="3"></textarea>
           </div>
 
@@ -356,7 +356,7 @@ require '../../conexion/sesion.php';
           </div>
 
           <div class="form-group">
-            <label for="exampleFormControlTextarea1">Notas e consideracións</label>
+            <label for="exampleFormControlTextarea1" class="control-label">Notas e consideracións</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
 

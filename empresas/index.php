@@ -15,6 +15,7 @@ $resultado = $mysqli->query($sql);
 
 ?>
 
+<!DOCTYPE html>
 <html lang="gl">
 
 <head>
@@ -22,7 +23,7 @@ $resultado = $mysqli->query($sql);
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
   <link rel="stylesheet" href="../assets/css/index.css">
   <script src="../components/js/header2.js"></script>
   <script src="../components/js/footer2.js"></script>
@@ -42,7 +43,7 @@ $resultado = $mysqli->query($sql);
 
     <nav class="navbar navbar-light bg-light">
       <div class="container-fluid">
-        <h3>EMPRESAS</h3>
+        <h5>EMPRESAS</h5>
 
         <form class="d-flex" action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
           <a href="functions/nuevo.php" class="btn btn-outline-success mb-3 personita">
@@ -65,7 +66,7 @@ $resultado = $mysqli->query($sql);
     <hr>
 
     <div class="row table-responsive">
-      <table class="table table-striped table-hover">
+      <table class="table table-hover">
         <thead>
           <tr>
             <th class="col-sm-1">ID</th>

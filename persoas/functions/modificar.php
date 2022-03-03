@@ -38,10 +38,10 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
   <div class="t-container my-4">
 
     <ul class="nav t-tabs">
-      <li class="nav-link t-tab">Datos Personales</li>
+      <li class="nav-link t-tab">Datos Personais</li>
       <li class="nav-link t-tab">Formación</li>
       <li class="nav-link t-tab">Experiencia</li>
-      <li class="nav-link t-tab">Acciones</li>
+      <li class="nav-link t-tab">Accións</li>
       <li class="nav-link t-tab">Ofertas</li>
       <li class="nav-link t-tab"><a class="text-decoration-none" href="../index.php">Voltar a Persoas</a></li>
     </ul>
@@ -52,7 +52,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
         <!-- <p>Contenido Datos</p> -->
         <!-- <h3 class="p-5 text-left">MODIFICAR REXISTRO - DATOS</h3> -->
 
-        <form class="row g-3" method="POST" action="update.php" autocomplete="off">
+        <form class="row g-3 mt-4" method="POST" action="update.php" autocomplete="off">
 
           <div class="col-md-4">
             <label for="nome" class=" control-label">Nome:</label>
@@ -60,7 +60,8 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
               <input type="text" class="form-control" id="nombre" name="nome" placeholder="Nome" value="<?php echo $row['nome']; ?>" required>
             </div>
           </div>
-          <input type="hidden" id="id" name="id" value="<?php echo $row['id']; ?>" />
+
+          <input type="hidden" id="id" name="id" value="<?php echo $row['id']; ?>">
 
           <div class="col-md-4">
             <label for="primeiro_apelido" class=" control-label">Primeiro Apelido:</label>
@@ -138,7 +139,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
         <!-- <p>Contenido Formación</p> -->
         <!-- <h3 class="p-5 text-left">MODIFICAR REXISTRO - FORMACIÓN</h3> -->
 
-        <form class="row g-3" method="POST" action="update.php" autocomplete="off">
+        <form class="row g-3 mt-4" method="POST" action="update.php" autocomplete="off">
 
           <div class="col-md-4">
             <label for="estudo" class="control-label">Estudos Básicos</label>
@@ -259,7 +260,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
           </div>
 
           <div class="form-group">
-            <label for="exampleFormControlTextarea">Notas e consideracións</label>
+            <label for="exampleFormControlTextarea" class="control-label">Notas e consideracións</label>
             <textarea class="form-control" id="exampleFormControlTextarea" rows="3"></textarea>
           </div>
 
@@ -278,7 +279,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
         <!-- <p>Contenido Experiencia</p> -->
         <!-- <h3 class="p-5 text-left">MODIFICAR REXISTRO - EXPERIENCIA</h3> -->
 
-        <form class="row g-3" method="POST" action="update.php" autocomplete="off">
+        <form class="row g-3 mt-4" method="POST" action="update.php" autocomplete="off">
           <div class="col-md-4">
             <label for="ano_comezo" class="control-label">Ano de comezo:</label>
             <div class="col-sm-10">
@@ -315,7 +316,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
         <!-- <p>Contenido Acciones</p> -->
         <!-- <h3 class="p-5 text-left">MODIFICAR REXISTRO - ACCIÓNS</h3> -->
 
-        <form class="row g-3" method="POST" action="update.php" autocomplete="off">
+        <form class="row g-3 mt-4" method="POST" action="update.php" autocomplete="off">
 
           <div class="col-md-4">
             <label for="data_nacemento" class="control-label">Data da 1ª entrevista</label>
@@ -365,7 +366,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
           </div>
 
           <div class="form-group">
-            <label for="exampleFormControlTextarea1">Notas e consideracións</label>
+            <label for="exampleFormControlTextarea1" class="control-label">Notas e consideracións</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
 
@@ -385,7 +386,7 @@ $row = $resultado->fetch_array(MYSQLI_ASSOC);
         <!-- <p>Contenido Ofertas</p> -->
         <!-- <h3 class="p-5 text-left">MODIFICAR REXISTRO - OFERTAS</h3> -->
 
-        <form class="row g-3" method="POST" action="update.php" autocomplete="off">
+        <form class="row g-3 mt-4" method="POST" action="update.php" autocomplete="off">
           <div class="col-md-4">
             <label for="ofertade" class="control-label">Tipo de oferta:</label>
             <div class="col-sm-10">
