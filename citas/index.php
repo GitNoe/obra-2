@@ -20,9 +20,9 @@ $resultado = $mysqli->query($sql);
 <head>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+  <!-- <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
   <!-- <link rel="stylesheet" href="./index.css"> NO SE USA -->
   <link rel="stylesheet" href="../assets/css/index.css">
   <script src="../components/js/header2.js"></script>
@@ -42,16 +42,16 @@ $resultado = $mysqli->query($sql);
     <div class="row justify-content-center">
 
       <div class="col col-sm-5">
-        <h3>CALENDARIO</h3>
-        <img src="../img/marzo.jpg" alt="marzo" class="mw-100">
+        <!-- <h3>CALENDARIO</h3> -->
+        <img src="../img/calendar.png" alt="calendar" class="mw-100">
       </div>
 
-      <div class="col col-sm-6">
-        <h3>AXENDA de CITAS</h3>
+      <div class="col col-sm-7">
+        <!-- <h3 class="mt-2">AXENDA de CITAS</h3> -->
 
         <div class="row table-responsive mt-5">
 
-          <table class="table table-striped table-hover">
+          <table class="table table-striped table-hover mt-4">
             <thead>
               <tr>
                 <th class="col-sm-1">Resolto</th>
@@ -64,7 +64,7 @@ $resultado = $mysqli->query($sql);
             <tbody>
               <?php while ($row = $resultado->fetch_array(MYSQLI_ASSOC)) { ?>
                 <tr>
-                  <td><input type='checkbox'></td>
+                  <td class="justify-content-center"><input type='checkbox'></td>
                   <td><?php echo $row['data']; ?></td>
                   <td><?php echo $row['nome']; ?></td>
                   <td><?php echo $row['horain']; ?></td>

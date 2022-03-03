@@ -1,6 +1,7 @@
 <?php
 require '../conexion/conexion.php';
 require '../conexion/sesion.php';
+// require '../pagination.php';
 
 $where = "";
 
@@ -8,12 +9,34 @@ if (!empty($_POST)) {
   $valor = $_POST['campo'];
   if (!empty($valor)) {
     $where = "WHERE nif LIKE '%" . $valor . "%'";
-  } else if (!empty($valor)) {
-    $where = "WHERE sexo LIKE '%" . $valor . "%'";
   }
 }
-$sql = "SELECT * FROM persoas $where";
-$resultado = $mysqli->query($sql);
+// DESACTIVAR PARA EVIAR CONFLICTO CON PAGINACIÓN -> DEJA DE FUNCIONAR LA BÚSQUEDA POR NIF
+// $sql = "SELECT * FROM persoas $where";
+// $result = $mysqli->query($sql);
+
+// PAGINACION
+
+// Get the total number of records from our table "PERSOAS".
+$total_pages = $mysqli->query('SELECT COUNT(*) FROM persoas')->fetch_row()[0];
+
+// Check if the page number is specified and check if it's a number, if not return the default page number which is 1.
+$page = isset($_GET['page']) && is_numeric($_GET['page']) ? $_GET['page'] : 1;
+
+// Number of results to show on each page.
+$num_results_on_page = 5;
+
+if ($stmt = $mysqli->prepare('SELECT * FROM persoas ORDER BY id LIMIT ?,?')) {
+  // Calculate the page to get the results we need from our table.
+  $calc_page = ($page - 1) * $num_results_on_page;
+  $stmt->bind_param('ii', $calc_page, $num_results_on_page);
+  $stmt->execute();
+  // Get the results...
+  $result = $stmt->get_result();
+  $stmt->close();
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -86,7 +109,8 @@ $resultado = $mysqli->query($sql);
         </thead>
 
         <tbody>
-          <?php while ($row = $resultado->fetch_array(MYSQLI_ASSOC)) { ?>
+          <!-- METODO PARA PAGINACION NUEVO-->
+          <?php while ($row = $result->fetch_assoc()): ?>
             <tr>
               <!-- <td><?php echo $row['id']; ?></td> -->
               <td><?php echo $row['nome']; ?></td>
@@ -105,17 +129,51 @@ $resultado = $mysqli->query($sql);
                     <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
                     <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
                   </svg></a>
-              <a class="red-icons" href="functions/modificar.php?id=<?php echo $row['id']; ?>"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">
+                <a class="red-icons" href="functions/modificar.php?id=<?php echo $row['id']; ?>"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">
                     <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z" />
                   </svg></a>
-              <a class="red-icons" href="functions/eliminar.php?id=<?php echo $row['id'] ?>"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                <a class="red-icons" href="functions/eliminar.php?id=<?php echo $row['id'] ?>"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                     <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
-                  </svg></a></td>
+                  </svg></a>
+              </td>
             </tr>
-          <?php } ?>
+          <?php endwhile; ?>
         </tbody>
       </table>
     </div>
+
+    <!-- FUNCIÓN DE PAGINACIÓN SIN ESTILOS -->
+    <?php if (ceil($total_pages / $num_results_on_page) > 0) : ?>
+      <ul class="pagination">
+        <?php if ($page > 1) : ?>
+          <li class="prev"><a href="index.php?page=<?php echo $page - 1 ?>">Prev</a></li>
+        <?php endif; ?>
+
+        <?php if ($page > 3) : ?>
+          <li class="start"><a href="index.php?page=1">1</a></li>
+          <li class="dots">...</li>
+        <?php endif; ?>
+
+        <?php if ($page - 2 > 0) : ?><li class="page"><a href="index.php?page=<?php echo $page - 2 ?>"><?php echo $page - 2 ?></a></li><?php endif; ?>
+        <?php if ($page - 1 > 0) : ?><li class="page"><a href="index.php?page=<?php echo $page - 1 ?>"><?php echo $page - 1 ?></a></li><?php endif; ?>
+
+        <li class="currentpage"><a href="index.php?page=<?php echo $page ?>"><?php echo $page ?></a></li>
+
+        <?php if ($page + 1 < ceil($total_pages / $num_results_on_page) + 1) : ?><li class="page"><a href="index.php?page=<?php echo $page + 1 ?>"><?php echo $page + 1 ?></a></li><?php endif; ?>
+        <?php if ($page + 2 < ceil($total_pages / $num_results_on_page) + 1) : ?><li class="page"><a href="index.php?page=<?php echo $page + 2 ?>"><?php echo $page + 2 ?></a></li><?php endif; ?>
+
+        <?php if ($page < ceil($total_pages / $num_results_on_page) - 2) : ?>
+          <li class="dots">...</li>
+          <li class="end"><a href="index.php?page=<?php echo ceil($total_pages / $num_results_on_page) ?>"><?php echo ceil($total_pages / $num_results_on_page) ?></a></li>
+        <?php endif; ?>
+
+        <?php if ($page < ceil($total_pages / $num_results_on_page)) : ?>
+          <li class="next"><a href="index.php?page=<?php echo $page + 1 ?>">Next</a></li>
+        <?php endif; ?>
+      </ul>
+    <?php endif; ?>
+
+
   </div>
 
   <!-- ESTA ERA LA FLECHA QUE SUBÍA -->
@@ -128,3 +186,6 @@ $resultado = $mysqli->query($sql);
 </body>
 
 </html>
+      <!-- <?php
+      $stmt->close();
+      ?> -->
