@@ -142,7 +142,7 @@ if ($stmt = $mysqli->prepare('SELECT * FROM persoas ORDER BY id LIMIT ?,?')) {
       </table>
     </div>
 
-    <!-- FUNCIÓN DE PAGINACIÓN SIN ESTILOS -->
+    <!-- FUNCIÓN DE PAGINACIÓN CON ESTILOS -->
     <?php if (ceil($total_pages / $num_results_on_page) > 0) : ?>
       <ul class="pagination">
         <?php if ($page > 1) : ?>
@@ -173,7 +173,6 @@ if ($stmt = $mysqli->prepare('SELECT * FROM persoas ORDER BY id LIMIT ?,?')) {
       </ul>
     <?php endif; ?>
 
-
   </div>
 
   <!-- ESTA ERA LA FLECHA QUE SUBÍA -->
@@ -186,6 +185,4 @@ if ($stmt = $mysqli->prepare('SELECT * FROM persoas ORDER BY id LIMIT ?,?')) {
 </body>
 
 </html>
-<!-- <?php
-      $stmt->close();
-      ?> -->
+<!-- <?php $stmt->close(); ?> -->

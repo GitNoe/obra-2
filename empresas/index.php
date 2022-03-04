@@ -2,6 +2,7 @@
 require '../conexion/conexion.php';
 require '../conexion/sesion.php';
 
+// METODO DE BÚSQUEDA ANTERIOR - NO HACER CASO
 $where = "";
 
 if (!empty($_POST)) {
@@ -10,8 +11,33 @@ if (!empty($_POST)) {
     $where = "WHERE nome LIKE '%" . $valor . "%'";
   }
 }
-$sql = "SELECT * FROM empresas $where";
-$resultado = $mysqli->query($sql);
+// $sql = "SELECT * FROM empresas $where";
+// $resultado = $mysqli->query($sql);
+
+// while ($row = $resultado->fetch_array(MYSQLI_ASSOC)) {
+//   echo "<table></table>";
+// }
+
+// PAGINACION
+
+// Get the total number of records from our table "EMPRESAS".
+$total_pages = $mysqli->query('SELECT COUNT(*) FROM empresas')->fetch_row()[0];
+
+// Check if the page number is specified and check if it's a number, if not return the default page number which is 1.
+$page = isset($_GET['page']) && is_numeric($_GET['page']) ? $_GET['page'] : 1;
+
+// Number of results to show on each page.
+$num_results_on_page = 5;
+
+if ($stmt = $mysqli->prepare('SELECT * FROM empresas ORDER BY id LIMIT ?,?')) {
+  // Calculate the page to get the results we need from our table.
+  $calc_page = ($page - 1) * $num_results_on_page;
+  $stmt->bind_param('ii', $calc_page, $num_results_on_page);
+  $stmt->execute();
+  // Get the results...
+  $result = $stmt->get_result();
+  $stmt->close();
+}
 
 ?>
 
@@ -85,7 +111,7 @@ $resultado = $mysqli->query($sql);
         </thead>
 
         <tbody>
-          <?php while ($row = $resultado->fetch_array(MYSQLI_ASSOC)) { ?>
+          <?php while ($row = $result->fetch_assoc()) : ?>
             <tr>
               <td><?php echo $row['id']; ?></td>
               <td><?php echo $row['nome']; ?></td>
@@ -111,10 +137,42 @@ $resultado = $mysqli->query($sql);
                   </svg></a>
               </td>
             </tr>
-          <?php } ?>
+          <?php endwhile; ?>
         </tbody>
       </table>
     </div>
+
+    <!-- FUNCIÓN DE PAGINACIÓN CON ESTILOS -->
+    <?php if (ceil($total_pages / $num_results_on_page) > 0) : ?>
+      <ul class="pagination">
+        <?php if ($page > 1) : ?>
+          <li class="prev"><a href="index.php?page=<?php echo $page - 1 ?>">Prev</a></li>
+        <?php endif; ?>
+
+        <?php if ($page > 3) : ?>
+          <li class="start"><a href="index.php?page=1">1</a></li>
+          <li class="dots">...</li>
+        <?php endif; ?>
+
+        <?php if ($page - 2 > 0) : ?><li class="page"><a href="index.php?page=<?php echo $page - 2 ?>"><?php echo $page - 2 ?></a></li><?php endif; ?>
+        <?php if ($page - 1 > 0) : ?><li class="page"><a href="index.php?page=<?php echo $page - 1 ?>"><?php echo $page - 1 ?></a></li><?php endif; ?>
+
+        <li class="currentpage"><a href="index.php?page=<?php echo $page ?>"><?php echo $page ?></a></li>
+
+        <?php if ($page + 1 < ceil($total_pages / $num_results_on_page) + 1) : ?><li class="page"><a href="index.php?page=<?php echo $page + 1 ?>"><?php echo $page + 1 ?></a></li><?php endif; ?>
+        <?php if ($page + 2 < ceil($total_pages / $num_results_on_page) + 1) : ?><li class="page"><a href="index.php?page=<?php echo $page + 2 ?>"><?php echo $page + 2 ?></a></li><?php endif; ?>
+
+        <?php if ($page < ceil($total_pages / $num_results_on_page) - 2) : ?>
+          <li class="dots">...</li>
+          <li class="end"><a href="index.php?page=<?php echo ceil($total_pages / $num_results_on_page) ?>"><?php echo ceil($total_pages / $num_results_on_page) ?></a></li>
+        <?php endif; ?>
+
+        <?php if ($page < ceil($total_pages / $num_results_on_page)) : ?>
+          <li class="next"><a href="index.php?page=<?php echo $page + 1 ?>">Next</a></li>
+        <?php endif; ?>
+      </ul>
+    <?php endif; ?>
+
   </div>
 
   <!-- footer -->
