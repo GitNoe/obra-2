@@ -2,39 +2,19 @@
 require '../conexion/conexion.php';
 require '../conexion/sesion.php';
 
-// $where = "";
+// MISMO MÉTODO DE BÚSQUEDA - FALTA EL ORDEN DE LOS NÚMEROS
+$where = "";
 
-// if (!empty($_POST)) {
-//   $valor = $_POST['campo'];
-//   if (!empty($valor)) {
-//     $where = "WHERE nif LIKE '%" . $valor . "%'";
-//   }
-// }
-// DESACTIVAR PARA EVIAR CONFLICTO CON PAGINACIÓN -> DEJA DE FUNCIONAR LA BÚSQUEDA POR NIF
-// $sql = "SELECT * FROM persoas $where";
-// $result = $mysqli->query($sql);
-
-// PAGINACION
-
-// Get the total number of records from our table "PERSOAS".
-$total_pages = $mysqli->query('SELECT COUNT(*) FROM persoas')->fetch_row()[0];
-
-// Check if the page number is specified and check if it's a number, if not return the default page number which is 1.
-$page = isset($_GET['page']) && is_numeric($_GET['page']) ? $_GET['page'] : 1;
-
-// Number of results to show on each page.
-$num_results_on_page = 5;
-
-if ($stmt = $mysqli->prepare('SELECT * FROM persoas ORDER BY id LIMIT ?,?')) {
-  // Calculate the page to get the results we need from our table.
-  $calc_page = ($page - 1) * $num_results_on_page;
-  $stmt->bind_param('ii', $calc_page, $num_results_on_page);
-  $stmt->execute();
-  // Get the results...
-  $result = $stmt->get_result();
-  $stmt->close();
+if (!empty($_POST)) {
+  $valor = $_POST['campo'];
+  if (!empty($valor)) {
+    // $where = "WHERE nif LIKE '%" . $valor . "%'"; // busca cualquier orden
+    // $where = "WHERE nif LIKE '%$valor'"; // solo busca exactos
+    $where = "WHERE nif LIKE '$valor%'";
+  }
 }
-
+$sql = "SELECT * FROM persoas $where";
+$consulta = $mysqli->query($sql);
 
 ?>
 
@@ -71,7 +51,7 @@ if ($stmt = $mysqli->prepare('SELECT * FROM persoas ORDER BY id LIMIT ?,?')) {
       <div class="container-fluid">
         <h5>PERSOAS</h5>
 
-        <form class="d-flex" action="./busqueda.php" method="POST">
+        <form class="d-flex" action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
           <a href="functions/nuevo.php" class="btn btn-outline-success mb-3 personita">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
               <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
@@ -109,8 +89,7 @@ if ($stmt = $mysqli->prepare('SELECT * FROM persoas ORDER BY id LIMIT ?,?')) {
         </thead>
 
         <tbody>
-          <!-- METODO PARA PAGINACION NUEVO-->
-          <?php while ($row = $result->fetch_assoc()) : ?>
+          <?php while ($row = $consulta->fetch_array(MYSQLI_ASSOC)) { ?>
             <tr>
               <!-- <td><?php echo $row['id']; ?></td> -->
               <td><?php echo $row['nome']; ?></td>
@@ -125,11 +104,11 @@ if ($stmt = $mysqli->prepare('SELECT * FROM persoas ORDER BY id LIMIT ?,?')) {
               <!-- <td><a href="#"><i class="fa-solid fa-eye"></i></a></td>
                 <td><a href="functions/modificar.php?id=<?php echo $row['id']; ?>"><i class="fas fa-pencil-alt"></i></a></td>
                 <td><a href="functions/eliminar.php?id=<?php echo $row['id'] ?>"><i class="fas fa-trash-alt"></i></a></td> -->
-                <td><a class="red-icons" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+              <td><a class="red-icons" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
                     <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
                     <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
                   </svg></a>
-                  <a class="red-icons" href="functions/modificar.php?id=<?php echo $row['id']; ?>"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
+                <a class="red-icons" href="functions/modificar.php?id=<?php echo $row['id']; ?>"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
                     <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z" />
                   </svg></a>
                 <a class="red-icons" href="functions/eliminar.php?id=<?php echo $row['id'] ?>"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
@@ -137,47 +116,12 @@ if ($stmt = $mysqli->prepare('SELECT * FROM persoas ORDER BY id LIMIT ?,?')) {
                   </svg></a>
               </td>
             </tr>
-          <?php endwhile; ?>
+          <?php } ?>
         </tbody>
       </table>
     </div>
 
-    <!-- FUNCIÓN DE PAGINACIÓN CON ESTILOS -->
-    <?php if (ceil($total_pages / $num_results_on_page) > 0) : ?>
-      <ul class="pagination">
-        <?php if ($page > 1) : ?>
-          <li class="prev"><a href="index.php?page=<?php echo $page - 1 ?>">Prev</a></li>
-        <?php endif; ?>
-
-        <?php if ($page > 3) : ?>
-          <li class="start"><a href="index.php?page=1">1</a></li>
-          <li class="dots">...</li>
-        <?php endif; ?>
-
-        <?php if ($page - 2 > 0) : ?><li class="page"><a href="index.php?page=<?php echo $page - 2 ?>"><?php echo $page - 2 ?></a></li><?php endif; ?>
-        <?php if ($page - 1 > 0) : ?><li class="page"><a href="index.php?page=<?php echo $page - 1 ?>"><?php echo $page - 1 ?></a></li><?php endif; ?>
-
-        <li class="currentpage"><a href="index.php?page=<?php echo $page ?>"><?php echo $page ?></a></li>
-
-        <?php if ($page + 1 < ceil($total_pages / $num_results_on_page) + 1) : ?><li class="page"><a href="index.php?page=<?php echo $page + 1 ?>"><?php echo $page + 1 ?></a></li><?php endif; ?>
-        <?php if ($page + 2 < ceil($total_pages / $num_results_on_page) + 1) : ?><li class="page"><a href="index.php?page=<?php echo $page + 2 ?>"><?php echo $page + 2 ?></a></li><?php endif; ?>
-
-        <?php if ($page < ceil($total_pages / $num_results_on_page) - 2) : ?>
-          <li class="dots">...</li>
-          <li class="end"><a href="index.php?page=<?php echo ceil($total_pages / $num_results_on_page) ?>"><?php echo ceil($total_pages / $num_results_on_page) ?></a></li>
-        <?php endif; ?>
-
-        <?php if ($page < ceil($total_pages / $num_results_on_page)) : ?>
-          <li class="next"><a href="index.php?page=<?php echo $page + 1 ?>">Next</a></li>
-        <?php endif; ?>
-      </ul>
-    <?php endif; ?>
-
   </div>
-
-  <!-- ESTA ERA LA FLECHA QUE SUBÍA -->
-  <!-- <button id="myBtn"><a href="#top" style="color: white; text-decoration: none";><i class="fas fa-chevron-up"></i></a></button> -->
-  <!-- <div id="myBtn"><a href="#top" ;><i class="fas fa-chevron-up"></i></a></div> -->
 
   <!-- footer -->
   <footer-component></footer-component>
@@ -185,4 +129,3 @@ if ($stmt = $mysqli->prepare('SELECT * FROM persoas ORDER BY id LIMIT ?,?')) {
 </body>
 
 </html>
-<!-- <?php $stmt->close(); ?> -->
