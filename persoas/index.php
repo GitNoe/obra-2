@@ -82,7 +82,7 @@ if ($stmt = $mysqli->prepare('SELECT * FROM persoas ORDER BY id LIMIT ?,?')) {
 
           <div class="input-group mb-3 w-6">
 
-            <input id="campo" name="campo" class="form-control me-2 ml-1" type="text" placeholder="Búsqueda por NIF" aria-label="Search">
+            <input id="campo" name="campo" class="form-control me-2 ml-1" type="text" placeholder="Búsqueda por NIF ou Nome" aria-label="Search">
             <input type="submit" id="enviar" name="enviar" value="Buscar" class="btn btn-outline-success">
           </div>
         </form>

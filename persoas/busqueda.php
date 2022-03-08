@@ -2,7 +2,7 @@
 require '../conexion/conexion.php';
 require '../conexion/sesion.php';
 
-// MISMO MÉTODO DE BÚSQUEDA - FALTA EL ORDEN DE LOS NÚMEROS
+// MISMO METODO DE BÚSQUEDA - FALTA EL ORDEN DE LOS NÚMEROS
 $where = "";
 
 if (!empty($_POST)) {
@@ -10,7 +10,7 @@ if (!empty($_POST)) {
   if (!empty($valor)) {
     // $where = "WHERE nif LIKE '%" . $valor . "%'"; // busca cualquier orden
     // $where = "WHERE nif LIKE '%$valor'"; // solo busca exactos
-    $where = "WHERE nif LIKE '$valor%'";
+    $where = "WHERE nif LIKE '$valor%' OR nome LIKE '$valor%'"; // buca el comienzo
   }
 }
 $sql = "SELECT * FROM persoas $where";
@@ -62,7 +62,7 @@ $consulta = $mysqli->query($sql);
 
           <div class="input-group mb-3 w-6">
 
-            <input id="campo" name="campo" class="form-control me-2 ml-1" type="text" placeholder="Búsqueda por NIF" aria-label="Search">
+            <input id="campo" name="campo" class="form-control me-2 ml-1" type="text" placeholder="Búsqueda por NIF ou Nome" aria-label="Search">
             <input type="submit" id="enviar" name="enviar" value="Buscar" class="btn btn-outline-success">
           </div>
         </form>
