@@ -10,7 +10,7 @@ if (!empty($_POST)) {
   if (!empty($valor)) {
     // $where = "WHERE nif LIKE '%" . $valor . "%'"; // busca cualquier orden
     // $where = "WHERE nif LIKE '%$valor'"; // solo busca exactos
-    $where = "WHERE nif LIKE '$valor%' OR nome LIKE '$valor%'"; // buca el comienzo
+    $where = "WHERE nif LIKE '$valor%' OR nome LIKE '$valor%' OR primeiro_apelido LIKE '$valor%'"; // buca el comienzo
   }
 }
 $sql = "SELECT * FROM persoas $where";
@@ -62,7 +62,7 @@ $consulta = $mysqli->query($sql);
 
           <div class="input-group mb-3 w-6">
 
-            <input id="campo" name="campo" class="form-control me-2 ml-1" type="text" placeholder="Búsqueda por NIF ou Nome" aria-label="Search">
+            <input id="campo" name="campo" class="form-control me-2 ml-1" type="text" placeholder="NIF, Nome ou 1º Apelido" aria-label="Search">
             <input type="submit" id="enviar" name="enviar" value="Buscar" class="btn btn-outline-success">
           </div>
         </form>
